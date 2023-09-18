@@ -1,0 +1,189 @@
+# Financial Metrics and SSCM Metrics
+
+#Net Profit Margin and SSCM 
+
+#Net Profit Margin and Supply Chain Transparency
+
+ # Load required libraries 
+
+library(tidyverse) 
+
+# Create a dataframe 
+
+data <- data.frame( 
+
+  Year = c(2022, 2021, 2020, 2019, 2018), 
+
+  Net_Profit_Margin = c(0.016, 0.0505, 0.0066, 0.0578, 0.0601), 
+
+  Supply_Chain_Transparency = c(0.66, 0.68, 0.73, 0.61, 0.57) 
+
+) 
+
+# Perform the regression analysis 
+
+reg_model <- lm(Net_Profit_Margin ~ Supply_Chain_Transparency, data = data) 
+
+# Print the regression summary 
+
+summary(reg_model) 
+
+# Load the required libraries 
+
+library(ggplot2) 
+
+# Create a scatter plot 
+
+scatter_plot <- ggplot(data, aes(x = Supply_Chain_Transparency, y = Net_Profit_Margin)) + 
+
+  geom_point() + 
+
+  geom_smooth(method = "lm", se = FALSE, color = "blue") + 
+
+  labs( 
+
+    title = "Regression Analysis: Net Profit Margin vs. Supply Chain Transparency", 
+
+    x = "Supply Chain Transparency", 
+
+    y = "Net Profit Margin" 
+
+  ) + 
+
+  theme_minimal() 
+
+# Display the scatter plot 
+
+print(scatter_plot) 
+
+   
+
+#Net Profit Margin and Sustainable Sourcing 
+
+# Load required libraries 
+
+library(tidyverse) 
+
+# Read the data 
+
+data <- read.table(text = "Year Net.Profit.Margin Sustainable.Sourcing 
+
+2022 0.0160 0.84 
+
+2021 0.0505 0.80 
+
+2020 0.0066 0.65 
+
+2019 0.0578 0.57 
+
+2018 0.0601 0.57", header = TRUE) 
+
+# Perform the regression analysis 
+
+reg_model <- lm(Net.Profit.Margin ~ Sustainable.Sourcing, data = data) 
+
+# Print the regression summary 
+
+summary(reg_model) 
+
+# Load the required libraries 
+
+library(ggplot2) 
+
+# Create a scatter plot 
+
+scatter_plot <- ggplot(data, aes(x = Sustainable.Sourcing, y = Net.Profit.Margin)) + 
+
+  geom_point() + 
+
+  geom_smooth(method = "lm", se = FALSE, color = "blue") + 
+
+  labs( 
+
+    title = "Regression Analysis: Net Profit Margin vs. Sustainable Sourcing", 
+
+    x = "Sustainable Sourcing", 
+
+    y = "Net Profit Margin" 
+
+  ) + 
+
+  theme_minimal() 
+
+# Display the scatter plot 
+
+print(scatter_plot) 
+
+
+
+# Operational Metrics and SSCM Metrics
+
+#Return on Assets and Supply Chain Transparency 
+
+# Load required libraries
+library(dplyr)
+
+# Create the dataframe
+data <- data.frame(
+  Year = c(2022, 2021, 2020, 2019, 2018),
+  `Return on Assets` = c(0.0197, 0.0568, 0.0084, 0.1124, 0.1123),
+  `Supply Chain Transparency` = c(0.66, 0.68, 0.73, 0.61, 0.57)
+)
+
+# Perform regression analysis
+reg_model <- lm(`Return.on.Assets` ~ `Supply.Chain.Transparency`, data = data)
+
+# Print the regression summary
+summary(reg_model)
+
+# Load the required libraries
+library(ggplot2)
+
+# Create a scatter plot
+scatter_plot <- ggplot(data, aes(x = Supply.Chain.Transparency, y = Return.on.Assets)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    title = "Regression Analysis: Return on Assets vs. Supply Chain Transparency",
+    x = "Supply Chain Transparency",
+    y = "Return on Assets"
+  ) +
+  theme_minimal()
+
+# Display the scatter plot
+print(scatter_plot)
+
+
+# Return on Assets and Sustainable Sourcing 
+
+# Load required library
+library(dplyr)
+
+# Create the dataframe
+data <- data.frame(
+  Year = c(2022, 2021, 2020, 2019, 2018),
+  `Return on Assets` = c(0.0197, 0.0568, 0.0084, 0.1124, 0.1123),
+  `Sustainable Sourcing` = c(0.84, 0.80, 0.645, 0.571, 0.566)
+)
+
+# Perform regression analysis
+reg_model <- lm(`Return.on.Assets` ~ `Sustainable.Sourcing`, data = data)
+
+# Print the regression summary
+summary(reg_model)
+
+# Create a scatter plot
+scatter_plot <- ggplot(data, aes(x = Sustainable.Sourcing, y = Return.on.Assets)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    title = "Regression Analysis: Return on Assets vs. Sustainable Sourcing",
+    x = "Sustainable Sourcing",
+    y = "Return on Assets"
+  ) +
+  theme_minimal()
+
+# Display the scatter plot
+print(scatter_plot)
+
+
